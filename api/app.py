@@ -1,12 +1,14 @@
 import os
 from flask import Flask, flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
+from flask_cors import CORS
 
 from extractor.parser import parser
 
 UPLOAD_FOLDER = "./uploads"
 ALLOWED_EXTENSIONS = {"pdf"}
 app = Flask(__name__)
+CORS(app)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.debug = True
