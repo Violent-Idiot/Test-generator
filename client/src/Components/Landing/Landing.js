@@ -31,7 +31,7 @@ const Landing = ()=>{
         })
         .then(result => {
             result.json().then(
-                res => setText(res.data)
+                res => console.log(res.data)
             )
         })
         .catch(error => {
