@@ -1,0 +1,14 @@
+.Main {
+  margin-top: 20vh;
+  align-items: center;
+  border: 1px solid #000;
+  min-height: 70vh;
+}
+.Element {
+  display: flex;
+  width: 70vw;
+  justify-content: space-between;
+  border: 1px solid rgb(211, 211, 211);
+  margin: auto;
+  background-color: rgba(250, 235, 215, 0.493);
+}
