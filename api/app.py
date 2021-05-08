@@ -6,7 +6,6 @@ from flask_cors import CORS
 from question_generation.pipelines import pipeline
 import torch
 
-
 from extractor.parser import parser
 
 UPLOAD_FOLDER = "./uploads"
