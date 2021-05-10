@@ -1,23 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Quiz.module.css";
-const Quiz = () => {
+const Quiz = (props) => {
 
-  const [questions,setQuestions] = useState([
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptates obcaecati quidem assumenda recusandae eligendi consequuntur in voluptate quod illo?",
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptates obcaecati quidem assumenda recusandae eligendi consequuntur in voluptate quod illo?",
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptates obcaecati quidem assumenda recusandae eligendi consequuntur in voluptate quod illo?",
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptates obcaecati quidem assumenda recusandae eligendi consequuntur in voluptate quod illo?",
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptates obcaecati quidem assumenda recusandae eligendi consequuntur in voluptate quod illo?",
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptates obcaecati quidem assumenda recusandae eligendi consequuntur in voluptate quod illo?"
-  ])
-  const [ans,setAns] = useState([
-    "lorem ipsum",
-    "lorem ipsum",
-    "lorem ipsum",
-    "lorem ipsum",
-    "lorem ipsum",
-    "lorem ipsum"
-  ])
+  const {
+    questions,
+    ans
+  } = props;
   const [marks,setMarks] = useState(null)
 
 
