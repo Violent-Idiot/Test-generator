@@ -3,7 +3,7 @@ from flask import Flask, flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
 
-from question_generation.pipelines import pipeline
+from question_maker.pipelines import pipeline
 import torch
 
 from extractor.parser import parser
