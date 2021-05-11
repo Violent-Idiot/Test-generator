@@ -42,9 +42,9 @@ const Landing = () => {
           setFile(file.target.files[0]);
         }}
       />
-      <button onClick={handleSubmit}>submits</button>
+      <button onClick={handleSubmit}>submit</button>
       {text && <p>{text}</p>}
-      <Quiz />
+      {/* <Quiz /> */}
     </div>
   );
 };
