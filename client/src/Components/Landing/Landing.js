@@ -1,5 +1,5 @@
 import react, { useEffect, useState } from "react";
-import classes from "./Landing.module.css";
+
 import axios from "axios";
 import Quiz from "../Quiz/Quiz";
 const Landing = () => {

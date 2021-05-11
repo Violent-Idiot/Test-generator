@@ -10,46 +10,51 @@ const Quiz = () => {
       </div>
       <div className={styles.Container}>
         <h1 id={styles.heading2}>Questions</h1>
-        <div className={styles.Element}>
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
-            earum!
+        <form>
+          <div className={styles.Element}>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, earum!
+            </div>
+            <div>
+              Ans:
+              <input className={styles.Answer} type="text" />
+            </div>
+          </div>{" "}
+          <div className={styles.Element}>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, earum!
+            </div>
+            <div>
+              Ans:
+              <input className={styles.Answer} type="text" />
+            </div>
+          </div>{" "}
+          <div className={styles.Element}>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, earum!
+            </div>
+            <div>
+              Ans:
+              <input className={styles.Answer} type="text" />
+            </div>
+          </div>{" "}
+          <div className={styles.Element}>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, earum!
+            </div>
+            <div>
+              Ans:
+              <input className={styles.Answer} type="text" />
+            </div>
           </div>
           <div>
-            Ans:
-            <input className={styles.Answer} type="text" />
+            <button id={styles.Submit}>Submit</button>
           </div>
-        </div>{" "}
-        <div className={styles.Element}>
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
-            earum!
-          </div>
-          <div>
-            Ans:
-            <input className={styles.Answer} type="text" />
-          </div>
-        </div>{" "}
-        <div className={styles.Element}>
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
-            earum!
-          </div>
-          <div>
-            Ans:
-            <input className={styles.Answer} type="text" />
-          </div>
-        </div>{" "}
-        <div className={styles.Element}>
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
-            earum!
-          </div>
-          <div>
-            Ans:
-            <input className={styles.Answer} type="text" />
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   );
