@@ -1,15 +1,48 @@
 .Main {
-  margin-top: 20vh;
-  align-items: center;
-  border: 1px solid #000;
-  min-height: 70vh;
-  padding-bottom: 60px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  background: #1e1e1e;
+  color: #ffffff;
+  height: 100%;
+  overflow: auto;
+}
+.Nav {
+  display: flex;
+  justify-content: space-around;
+  width: 30vw;
+}
+#heading1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-top: 1vh;
+}
+#heading2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 4vw;
 }
 .Element {
-  display: flex;
-  width: 70vw;
-  justify-content: space-between;
-  border: 1px solid rgb(211, 211, 211);
-  margin: auto;
-  background-color: rgba(250, 235, 215, 0.493);
+  border: 1px solid wheat;
+  min-height: 8vh;
+  padding: 2vh;
+  width: 80vw;
+  margin: 1vw auto;
+  border-radius: 3vh;
+  align-items: inherit;
+}
+.Answer {
+  border: none;
+  border-bottom: 1px solid wheat;
+  min-width: 5vw;
+  margin: 2vw 1vw;
+  color: white;
+  background-color: #1e1e1e;
+}
+#Submit {
+  width: 10vw;
+  border-radius: 1vw;
+  margin: 5vh;
+  height: 5vh;
+  font-weight: 700;
+  font-size: 1vw;
 }

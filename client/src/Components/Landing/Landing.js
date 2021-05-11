@@ -1,13 +1,13 @@
 import react, { useEffect, useState } from "react";
-import classes from "./Landing.module.css";
+
 import axios from "axios";
 import Quiz from "../Quiz/Quiz";
 const Landing = () => {
   const [file, setFile] = useState(null);
   const [qList, setqList] = useState([]);
 
-  const [questions,setQuestions] = useState([])
-  const [ans,setAns] = useState([])
+  const [questions, setQuestions] = useState([]);
+  const [ans, setAns] = useState([]);
 
   useEffect(() => {
     console.log(file);
@@ -37,12 +37,11 @@ const Landing = () => {
           var qa = res.data;
           var q = [];
           var a = [];
-          console.log(res.data)
-          qa.map(
-            res =>{
-              q.push(res.question)
-              a.push(res.answer)
-          })
+          console.log(res.data);
+          qa.map((res) => {
+            q.push(res.question);
+            a.push(res.answer);
+          });
           setQuestions(q);
           setAns(a);
         });
@@ -61,10 +60,7 @@ const Landing = () => {
         }}
       />
       <button onClick={handleSubmit}>submits</button>
-      {
-        questions &&
-        <Quiz questions={questions} ans={ans} />
-      }
+      {questions && <Quiz questions={questions} ans={ans} />}
     </div>
   );
 };
