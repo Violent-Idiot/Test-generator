@@ -10,13 +10,6 @@ def parser(loc):
     num_pages = pdfReader.numPages
     count = 0
     text = ""
-    while count < num_pages:
-        pageObj = pdfReader.getPage(count)
-        count += 1
-        text += pageObj.extractText()
-    if text != "":
-        text = text
-    else:
-        text = textract.process(fileurl, method="tesseract", language="eng")
-        # print(text)
-    return text
+    text = textract.process(filename, encoding='utf_8')
+    # print(text)
+    return str(text.decode()).replace('\r', '').replace('\n', ' ').replace('\f', '')

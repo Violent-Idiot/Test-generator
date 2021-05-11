@@ -49,20 +49,7 @@ const Quiz = () => {
             Ans:
             <input className={styles.Answer} type="text" />
           </div>
-        </div>{" "}
-        <div className={styles.Element}>
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
-            earum!
-          </div>
-          <div>
-            Ans:
-            <input className={styles.Answer} type="text" />
-          </div>
         </div>
-      </div>
-      <div>
-        <button id={styles.Submit}>Submit</button>
       </div>
     </div>
   );
