@@ -1,6 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Quiz.module.css";
-const Quiz = () => {
+const Quiz = (props) => {
+
+  const [result, setResult] = useState(null);
+
+  const {
+    questions,
+    ans
+  } = props;
+
+  const Evaluate = (e)=>{
+
+    var l = ans.length;
+    var marks = 0;
+
+    for(var a = 0; a < l;a++){
+      if(ans[a] === e.target.elements[a].value){
+        marks = marks+1;
+      }
+    }
+
+    setResult(marks);
+
+  }
+
+
   return (
     <div className={styles.Main}>
       <div className={styles.Nav}>

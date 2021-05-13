@@ -2,20 +2,18 @@ import react, { useEffect, useState } from "react";
 
 import axios from "axios";
 import Quiz from "../Quiz/Quiz";
-const Landing = () => {
+const Landing = (props) => {
   const [file, setFile] = useState(null);
   const [qList, setqList] = useState([]);
 
-  const [questions, setQuestions] = useState([]);
-  const [ans, setAns] = useState([]);
+  const {
+    setQuestions,
+    setAns
+  } = props;
 
   useEffect(() => {
     console.log(file);
   }, [file]);
-  useEffect(() => {
-    console.log(questions);
-  }, [questions]);
-
   /*
     fetch('http://127.0.0.1:5000/upload').then(
         res=>console.log(res)
@@ -60,7 +58,6 @@ const Landing = () => {
         }}
       />
       <button onClick={handleSubmit}>submits</button>
-      {questions && <Quiz questions={questions} ans={ans} />}
     </div>
   );
 };
