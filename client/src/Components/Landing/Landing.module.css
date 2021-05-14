@@ -31,7 +31,7 @@
 .intro {
   text-align: left;
   margin-left: 17%;
-  margin-top: -40px;
+  margin-top: -20px;
   width: 83%;
 }
 .intro h1 {
@@ -46,6 +46,7 @@
 }
 .intro p {
   margin: 0px;
+  text-align: justify;
   font-family: "Montserrat";
   margin-left: 4px;
   font-size: 18px;
