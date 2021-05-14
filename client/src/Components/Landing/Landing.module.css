@@ -20,6 +20,10 @@
 .logoContainer {
   grid-area: "logo";
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /*--------for test--------*/
@@ -70,6 +74,7 @@
   cursor: pointer;
   transition-duration: 0.4s;
 }
-.waveCtn img {
-  width: 70%;
+.waveCtn {
+  width: 100%;
+  mix-blend-mode: lighten;
 }

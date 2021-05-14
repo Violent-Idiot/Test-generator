@@ -81,9 +81,7 @@ const Landing = (props) => {
           </div>
         </div>
         <div className={styles.logoContainer}>
-         {/* <div className={styles.waveCtn}>
-            <img src={Wave}/>
-            </div> */}
+          <img className={styles.waveCtn} src={Wave}/>
 
         </div>
       </div>
