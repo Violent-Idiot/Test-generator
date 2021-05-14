@@ -1,0 +1,17 @@
+.Nav {
+  display: flex;
+  width: 100vw;
+  height: 60px;
+}
+.Nav p {
+  margin-left: 25px;
+}
+.Nav p:hover {
+  cursor: pointer;
+}
+#heading1 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 3px;
+  margin-left: 10px;
+}
