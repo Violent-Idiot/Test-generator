@@ -33,7 +33,7 @@ const Uploader = ()=>{
                 exit={{opacity:0,transition:{duration:0.4}}}
             >
                 <motion.button whileHover={{scale:1.03,transition:{duration:0.1}}}>
-                    UPLOAD
+                    GENERATE QUESTIONS
                 </motion.button>
             </motion.div>            
         </div>
