@@ -3,14 +3,17 @@ import axios from "axios";
 import styles from "./Landing.module.css";
 import Header from "../Header/Header";
 import Wave from "../../Assets/wave2.svg";
-import { motion } from 'framer-motion';
-import Intro from './intro/intro'
+import { AnimatePresence, motion } from 'framer-motion';
+import Intro from './intro/intro';
+import Uploader from './uploader/uploader';
+import {Route, useLocation, Switch} from 'react-router-dom';
 
 
 
 const Landing = (props) => {
   const [file, setFile] = useState(null);
   const [qList, setqList] = useState([]);
+  const location = useLocation();
 
   const {
     setQuestions,
@@ -67,7 +70,17 @@ const Landing = (props) => {
       <Header/>
       <div className={styles.main}>
         <div className={styles.introUploader}>
-          <Intro />
+          <AnimatePresence exitBeforeEnter>
+            <Switch location={location} key={location.key}>
+              <Route exact path="/home">
+                <Intro />
+              </Route>
+              <Route path="/home/upload">
+                <Uploader />
+              </Route>
+            </Switch>
+            
+          </AnimatePresence>
         </div>
         <div className={styles.logoContainer}>
           <img className={styles.waveCtn} src={Wave}/>
