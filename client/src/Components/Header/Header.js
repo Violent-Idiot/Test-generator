@@ -11,7 +11,7 @@ const Header = ()=>{
             </div>
             <div className={styles.navBar}>
                 <ul>
-                    <motion.li whileHover={{scale:1.04}}><Link className={styles.heading2}>Home</Link></motion.li>
+                    <motion.li whileHover={{scale:1.04}}><Link className={styles.heading2} to='/home'>Home</Link></motion.li>
                     <motion.li whileHover={{scale:1.04}}><Link className={styles.heading2}>About Us</Link></motion.li>
                 </ul>
             </div>
