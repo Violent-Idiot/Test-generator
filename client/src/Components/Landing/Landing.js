@@ -3,7 +3,8 @@ import axios from "axios";
 import styles from "./Landing.module.css";
 import Header from "../Header/Header";
 import Wave from "../../Assets/wave2.svg";
-
+import { motion } from 'framer-motion';
+import Intro from './intro/intro'
 
 
 
@@ -66,19 +67,7 @@ const Landing = (props) => {
       <Header/>
       <div className={styles.main}>
         <div className={styles.introUploader}>
-          <div className={styles.intro}>
-            <h1>
-              Test<br/>Paper<br/>Generator
-            </h1>
-            <p>
-              Our system generates questions based on the pdf that you have uploaded. Just upload your pdf and voila you now have questions
-            </p>
-          </div>
-          <div className={styles.buttonContainer}>
-            <button>
-              LETS GET STARTED
-            </button>
-          </div>
+          <Intro />
         </div>
         <div className={styles.logoContainer}>
           <img className={styles.waveCtn} src={Wave}/>
