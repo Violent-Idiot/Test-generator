@@ -1,0 +1,67 @@
+.intro {
+  text-align: left;
+  margin-left: 17%;
+  margin-top: -20px;
+  width: 83%;
+}
+.intro h1 {
+  font-family: "Montserrat";
+  font-size: 45px;
+  font-weight: bolder;
+  line-height: 54px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+.intro p {
+  margin: 0px;
+  text-align: justify;
+  font-family: "Montserrat";
+  margin-left: 4px;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 100;
+  color: #ffffffc5;
+}
+.buttonContainer {
+  text-align: left;
+  margin-left: 17%;
+  margin-top: 50px;
+  width: 83%;
+}
+.buttonContainer button {
+  background-color: #ffffff;
+  color: #1e1e1e;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px 35px;
+  padding-bottom: 9px;
+  padding-right: 25px;
+  border: none;
+  border-radius: 100px;
+  transition-duration: 0.4s;
+}
+.buttonContainer button img {
+  height: 14px;
+  width: 0px;
+  opacity: 0;
+  margin-left: 10px;
+  transition-duration: 0.4s;
+}
+.buttonContainer button:hover {
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition-duration: 0.4s;
+  padding-left: 22px;
+  padding-right: 18px;
+  box-shadow: 0px 0px 10px 0px #bebebe;
+}
+.buttonContainer button:hover img {
+  opacity: 1;
+  width: 20px;
+}
+.waveCtn {
+  width: 100%;
+  mix-blend-mode: lighten;
+}

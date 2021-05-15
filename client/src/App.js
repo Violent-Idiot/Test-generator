@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Landing from "../src/Components/Landing/Landing";
 import Quiz from "./Components/Quiz/Quiz";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -21,6 +21,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
+            <Redirect to="/home/" />
+          </Route>
+          <Route path="/home">
             <Landing setQuestions={setQuestions} setAns={setAns}  />
           </Route>
           <Route path="/Quiz">

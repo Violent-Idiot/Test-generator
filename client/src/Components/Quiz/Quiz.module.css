@@ -8,11 +8,6 @@
   padding-bottom: 100px;
   overflow-x: hidden;
 }
-#heading2 {
-  font-size: 2.5em;
-  font-weight: 700;
-  margin-bottom: 4vw;
-}
 .Element {
   border: 1px solid wheat;
   min-height: 8vh;
