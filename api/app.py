@@ -22,6 +22,10 @@ def allowed_file(filename):
 
 
 @app.route("/upload", methods=["GET", "POST"])
+
+def test_route():
+    if request.method == "GET":
+        return {"testServer": "Hello"}
 def upload_file():
     if request.method == "POST":
         if "file" not in request.files:
@@ -35,8 +39,10 @@ def upload_file():
             filename = secure_filename(file.filename)
             loc = os.path.join(app.config["UPLOAD_FOLDER"], filename)
             file.save(loc)
+            # print(loc)
             # parser(loc)
             data = parser(loc)
             print(data)
             nlp = pipeline("multitask-qa-qg")
             return {"success": True, "data": nlp(data)}
+            return {"success": True}
