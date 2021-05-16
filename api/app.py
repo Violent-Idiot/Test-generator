@@ -45,4 +45,4 @@ def upload_file():
             print(data)
             nlp = pipeline("multitask-qa-qg")
             return {"success": True, "data": nlp(data)}
-            return {"success": True}
+            # return {"success": True}
