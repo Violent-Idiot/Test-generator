@@ -1,59 +1,82 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Quiz.module.css";
+import Header from "../Header/Header";
 const Quiz = (props) => {
+
+  const [result, setResult] = useState(null);
 
   const {
     questions,
     ans
   } = props;
-  const [marks,setMarks] = useState(null)
 
+  const Evaluate = (e)=>{
 
+    var l = ans.length;
+    var marks = 0;
 
-  const handleSubmit = (e)=>{
-    e.preventDefault();
-    var ctr = 0;
-
-    for(var a=0;a<ans.length;a++){
-
-      var submits =  e.target.elements[a].value; 
-
-      if(ans[a] === submits){
-        ctr++;
+    for(var a = 0; a < l;a++){
+      if(ans[a] === e.target.elements[a].value){
+        marks = marks+1;
       }
-
     }
 
-
-    setMarks(ctr);
+    setResult(marks);
 
   }
-
-  useEffect(()=>{
-    console.log(marks)
-  },[marks])
 
 
   return (
     <div className={styles.Main}>
-      <h3>QUIZ TIME</h3>
-      {
-        marks && 
-        <div>
-          <h2>score : {marks}</h2>
-        </div>
-      }
-      <form onSubmit={handleSubmit}>
-          {questions.map((ques, index) => 
-              <div className={styles.Element}>
-                <p>
-                  {index+1}.{ques}
-                </p>
-                <input type="text" placeholder="Type your answer here"/>
-              </div>
-            )}
-            <input type="submit"/>
-      </form>
+      <Header/>
+      <div className={styles.Container}>
+        <h1 id={styles.heading2}>Questions</h1>
+        <form>
+          <div className={styles.Element}>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, earum!
+            </div>
+            <div>
+              Ans:
+              <input className={styles.Answer} type="text" />
+            </div>
+          </div>{" "}
+          <div className={styles.Element}>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, earum!
+            </div>
+            <div>
+              Ans:
+              <input className={styles.Answer} type="text" />
+            </div>
+          </div>{" "}
+          <div className={styles.Element}>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, earum!
+            </div>
+            <div>
+              Ans:
+              <input className={styles.Answer} type="text" />
+            </div>
+          </div>{" "}
+          <div className={styles.Element}>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, earum!
+            </div>
+            <div>
+              Ans:
+              <input className={styles.Answer} type="text" />
+            </div>
+          </div>
+          <div>
+            <button id={styles.Submit}>Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

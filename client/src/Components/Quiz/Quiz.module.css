@@ -1,15 +1,45 @@
 .Main {
-  margin-top: 20vh;
-  align-items: center;
-  border: 1px solid #000;
-  min-height: 70vh;
-  padding-bottom: 60px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  background: #1e1e1e;
+  color: #ffffff;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 100px;
+  overflow-x: hidden;
 }
 .Element {
-  display: flex;
-  width: 70vw;
-  justify-content: space-between;
-  border: 1px solid rgb(211, 211, 211);
-  margin: auto;
-  background-color: rgba(250, 235, 215, 0.493);
+  border: 1px solid wheat;
+  min-height: 8vh;
+  text-align: justify;
+  padding: 3vh 9vh;
+  width: 61vw;
+  margin: 2vw auto;
+  border-radius: 3vh;
+  align-items: inherit;
+}
+.Answer {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid wheat;
+  min-width: 20vw;
+  margin: 2.3vw 1vw;
+  margin-bottom: 1vw;
+  color: white;
+  background-color: #1e1e1e;
+}
+#Submit {
+  font-size: 1.7vw;
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: 1.5px solid wheat;
+  color: #ffffff;
+  margin-top: 40px;
+  background-color: transparent;
+}
+#Submit:hover {
+  background-color: wheat;
+  color: #1e1e1e;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
