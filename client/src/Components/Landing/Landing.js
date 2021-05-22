@@ -2,7 +2,7 @@ import react, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./Landing.module.css";
 import Header from "../Header/Header";
-import Wave from "../../Assets/wave2.svg";
+import Wave from "../../Assets/wave1.png";
 import { AnimatePresence, motion } from 'framer-motion';
 import Intro from './intro/intro';
 import Uploader from './uploader/uploader';
@@ -76,7 +76,7 @@ const Landing = (props) => {
                 <Intro />
               </Route>
               <Route path="/home/upload">
-                <Uploader />
+                <Uploader setFile={setFile} handleSubmit={handleSubmit}/>
               </Route>
             </Switch>
             
