@@ -14,19 +14,19 @@
   text-align: justify;
   color: #1e1e1e;
   width: 61vw;
-  margin: 2vw auto;
+  margin: 3vw auto;
   border-radius: 2vh;
   align-items: inherit;
   background-color: #ffffff;
 }
 .Question {
   border: 1px solid white;
-  border-radius: 18px;
-  min-height: 8vh;
+  border-radius: 2vh;
   justify-content: center;
   background-color: black;
   padding: 5vh 2vw;
   color: #ffffff;
+  user-select: none;
 }
 #Answer {
   background-color: #ffffff;
@@ -42,6 +42,7 @@
   min-width: 20vw;
   margin: 2.3vw 1vw;
   margin-bottom: 1vw;
+  font-size: 18px;
 }
 #Submit {
   font-size: 1.7vw;
@@ -51,9 +52,54 @@
   color: #ffffff;
   margin-top: 40px;
   background-color: transparent;
+  user-select: none;
 }
 #Submit:hover {
   background-color: wheat;
+  color: #1e1e1e;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.modalBackdrop {
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1e1ec5;
+}
+.modal {
+  background-color: #ffffff;
+  height: 30vh;
+  width: 30vw;
+  color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2vw;
+}
+.modal h2 {
+  margin: 8px 0px;
+  margin-top: 0px;
+  font-weight: 800;
+}
+.modal p {
+  margin: 8px 0px;
+}
+.modal button {
+  margin: 8px 0px;
+  background-color: black;
+  color: #ffffff;
+  border: 1px solid black;
+  padding: 8px 15px;
+  border-radius: 10px;
+}
+.modal button:hover {
+  background-color: #ffffff;
   color: #1e1e1e;
   transition-duration: 0.4s;
   cursor: pointer;
