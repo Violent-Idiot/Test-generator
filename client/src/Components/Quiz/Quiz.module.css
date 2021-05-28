@@ -9,24 +9,39 @@
   overflow-x: hidden;
 }
 .Element {
-  border: 1px solid wheat;
+  border: 1px solid white;
   min-height: 8vh;
   text-align: justify;
-  padding: 3vh 9vh;
+  color: #1e1e1e;
   width: 61vw;
   margin: 2vw auto;
-  border-radius: 3vh;
+  border-radius: 2vh;
   align-items: inherit;
+  background-color: #ffffff;
 }
-.Answer {
+.Question {
+  border: 1px solid white;
+  border-radius: 18px;
+  min-height: 8vh;
+  justify-content: center;
+  background-color: black;
+  padding: 5vh 2vw;
+  color: #ffffff;
+}
+#Answer {
+  background-color: #ffffff;
+  color: black;
+  border-radius: 2vh;
+  display: inline-block;
+  margin-left: 2vw;
+}
+.Input {
   outline: none;
   border: none;
-  border-bottom: 1px solid wheat;
+  border-bottom: 1px solid black;
   min-width: 20vw;
   margin: 2.3vw 1vw;
   margin-bottom: 1vw;
-  color: white;
-  background-color: #1e1e1e;
 }
 #Submit {
   font-size: 1.7vw;
@@ -42,4 +57,10 @@
   color: #1e1e1e;
   transition-duration: 0.4s;
   cursor: pointer;
+}
+@media screen and (max-width: 540px) {
+  .Element {
+    width: 85vw;
+    margin-bottom: 5vh;
+  }
 }
