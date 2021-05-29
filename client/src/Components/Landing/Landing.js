@@ -29,6 +29,8 @@ const Landing = (props) => {
     )
 */
 
+  //for text-extraction: https://testpapergen.herokuapp.com/
+
   const handleSubmit = () => {
     const formData = new FormData();
 
