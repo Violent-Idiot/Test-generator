@@ -1,10 +1,6 @@
 import os
 from flask import Flask, flash, request, redirect, url_for
-from werkzeug.utils import secure_filename
 from flask_cors import CORS
-
-from question_maker.pipelines import pipeline
-import torch
 
 from extractor.parser import parser
 
@@ -37,5 +33,5 @@ def upload_file():
             file.save(loc)
             data = parser(loc)
             # print(data)
-            nlp = pipeline("multitask-qa-qg")
-            return {"success": True, "data": nlp(data)}
+            # nlp = pipeline("multitask-qa-qg")
+            return {"success": True}
