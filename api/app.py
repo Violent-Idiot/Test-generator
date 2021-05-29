@@ -1,7 +1,9 @@
 import os
 from flask import Flask, flash, request, redirect, url_for
+from werkzeug.utils import secure_filename
 from flask_cors import CORS
 
+from question_maker.question import Q_generation
 from extractor.parser import parser
 
 UPLOAD_FOLDER = "./uploads"
@@ -32,6 +34,11 @@ def upload_file():
             loc = os.path.join(app.config["UPLOAD_FOLDER"], filename)
             file.save(loc)
             data = parser(loc)
-            # print(data)
-            # nlp = pipeline("multitask-qa-qg")
-            return {"success": True}
+            return {"success": True, "data": data}
+
+
+@app.route("/generation", methods=["GET", "POST"])
+def generate():
+    if request.method == "POST":
+        text = request.form.get('key')
+        return {"data": Q_generation(text)}
