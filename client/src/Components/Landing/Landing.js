@@ -6,7 +6,7 @@ import Wave from "../../Assets/wave1.png";
 import { AnimatePresence, motion } from 'framer-motion';
 import Intro from './intro/intro';
 import Uploader from './uploader/uploader';
-import {Route, useLocation, Switch} from 'react-router-dom';
+import {Route, useLocation, Switch, Redirect} from 'react-router-dom';
 
 
 
@@ -49,7 +49,7 @@ const Landing = (props) => {
           console.log(res.data);
           qa.map((res) => {
             q.push(res.question);
-            a.push(res.answer);
+            a.push(res.answers);
           });
           setQuestions(q);
           setAns(a);

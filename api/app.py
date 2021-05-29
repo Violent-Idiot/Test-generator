@@ -34,7 +34,7 @@ def upload_file():
             loc = os.path.join(app.config["UPLOAD_FOLDER"], filename)
             file.save(loc)
             data = parser(loc)
-            return {"success": True, "data": data}
+            return {"success": True, "data": Q_generation(data)}
 
 
 @app.route("/generation", methods=["GET", "POST"])

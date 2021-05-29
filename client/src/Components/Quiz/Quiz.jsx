@@ -6,24 +6,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 const Quiz = (props) => {
   const [result, setResult] = useState(null);
 
-  //const { questions, ans } = props;
+  const { questions, ans } = props;
 
-  const [questions] = useState([
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, earum!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, earum!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, earum!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, earum!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, earum!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, earum!",
-  ])
-  const [ans] = useState([
-    "lorem ipsum",
-    "lorem ipsum",
-    "lorem ipsum",
-    "lorem ipsum",
-    "lorem ipsum",
-    "lorem ipsum",
-  ])
 
   const Evaluate = (e) => {
     e.preventDefault();
@@ -42,6 +26,9 @@ const Quiz = (props) => {
   useEffect(()=>{
     console.log(result);
   },[result])
+  useEffect(()=>{
+    console.log(ans);
+  },[ans])
 
   return (
     <div className={styles.Main}>
