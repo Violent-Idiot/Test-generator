@@ -24,10 +24,18 @@ function App() {
             <Redirect to="/home/" />
           </Route>
           <Route path="/home">
-            <Landing setQuestions={setQuestions} setAns={setAns}  />
+            {
+                questions? 
+                <Redirect to="/Quiz" /> :
+                <Landing setQuestions={setQuestions} setAns={setAns}  />
+            }
           </Route>
           <Route path="/Quiz">
-            <Quiz questions={questions} ans={ans} />
+          {
+                !questions? 
+                <Redirect to="/home/" /> :
+                <Quiz questions={questions} ans={ans} />
+            }
           </Route>
         </Switch>
       </Router>

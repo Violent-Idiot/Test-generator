@@ -3,10 +3,17 @@ import {useDropzone} from 'react-dropzone';
 import styles from './uploader.module.css';
 import { motion } from 'framer-motion';
 
-const Uploader = ()=>{
+const Uploader = (props)=>{
+    
+    const {
+        setFile,
+        handleSubmit
+    } = props;
+
+
 
     const onDrop = useCallback(acceptedFiles => {
-        // Do something with the files
+        setFile(acceptedFiles[0]);
       }, [])
     const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
@@ -32,7 +39,7 @@ const Uploader = ()=>{
                 animate={{opacity:1,transition:{delay:0.3}}}
                 exit={{opacity:0,transition:{duration:0.4}}}
             >
-                <motion.button whileHover={{scale:1.03,transition:{duration:0.1}}}>
+                <motion.button whileHover={{scale:1.03,transition:{duration:0.1}}} onClick={handleSubmit}>
                     GENERATE QUESTIONS
                 </motion.button>
             </motion.div>            
