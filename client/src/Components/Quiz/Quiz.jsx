@@ -5,6 +5,7 @@ import Fade from "react-reveal/Fade";
 import { AnimatePresence, motion } from 'framer-motion';
 const Quiz = (props) => {
   const [result, setResult] = useState(null);
+  const [anskey,setanskey] = useState(false);
 
   const { questions, ans } = props;
 
@@ -50,12 +51,31 @@ const Quiz = (props) => {
               >
                 <motion.div 
                   initial={{scale:0}}
-                  animate={{scale:1}}
+                  animate={anskey?{scale:1,y:-100}:{scale:1}}
                   exit={{scale:0}} 
                   className={styles.modal}>
                   <h2>RESULTS</h2>
                   <p>SCORE {result}</p>
-                  <button>ANSWER KEY</button>
+                  {
+                    anskey?
+                    <button onClick={()=>{setanskey(false)}}>HIDE</button>:
+                    <button onClick={()=>{setanskey(true)}}>ANSWER KEY</button>
+
+                  }
+                </motion.div>
+                <motion.div 
+                  initial={{scale:0}}
+                  animate={anskey?{scale:1,y:-100,height:"60vh"}:{scale:1}}
+                  exit={{scale:0}} 
+                  className={styles.answerkey}>
+                  <p>Answer Key</p>
+                  <ul>
+                    {
+                      ans.map(an=>(
+                        <li>{an}</li>
+                      ))
+                    }
+                  </ul>
                 </motion.div>
               </motion.div>
         }
@@ -69,12 +89,31 @@ const Quiz = (props) => {
               >
                 <motion.div 
                   initial={{scale:0}}
-                  animate={{scale:1}}
+                  animate={anskey?{scale:1,y:-100}:{scale:1}}
                   exit={{scale:0}} 
                   className={styles.modal}>
                   <h2>RESULTS</h2>
                   <p>SCORE {result}</p>
-                  <button>ANSWER KEY</button>
+                  {
+                    anskey?
+                    <button onClick={()=>{setanskey(false)}}>HIDE</button>:
+                    <button onClick={()=>{setanskey(true)}}>ANSWER KEY</button>
+
+                  }
+                </motion.div>
+                <motion.div 
+                  initial={{scale:0}}
+                  animate={anskey?{scale:1,y:-100,height:"60vh"}:{scale:1}}
+                  exit={{scale:0}} 
+                  className={styles.answerkey}>
+                  <p>Answer Key</p>
+                  <ul>
+                    {
+                      ans.map(an=>(
+                        <li>{an}</li>
+                      ))
+                    }
+                  </ul>
                 </motion.div>
               </motion.div>
         }

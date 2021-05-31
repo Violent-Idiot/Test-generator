@@ -66,9 +66,6 @@
   height: 100vh;
   width: 100vw;
   z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #1e1e1ec5;
 }
 .modal {
@@ -76,6 +73,12 @@
   height: 30vh;
   width: 30vw;
   color: #1e1e1e;
+  position: fixed;
+  top: 50vh;
+  margin-top: -15vh;
+  left: 50%;
+  margin-left: -15vw;
+  z-index: 110;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,6 +106,49 @@
   color: #1e1e1e;
   transition-duration: 0.4s;
   cursor: pointer;
+}
+.answerkey {
+  background-color: #1e1e1e;
+  height: calc(20vh - 2px);
+  width: calc(30vw - 2px);
+  color: #fff;
+  position: fixed;
+  top: 50vh;
+  margin-top: -15vh;
+  left: 50%;
+  margin-left: -15vw;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 2vw;
+  border: 1px solid white;
+  overflow-y: hidden;
+}
+.answerkey p {
+  margin-top: 31vh;
+  margin-bottom: 0px;
+  font-weight: 800;
+}
+.answerkey ul {
+  padding: 0;
+  height: 30vh;
+  width: 90%;
+  overflow-y: auto;
+}
+.answerkey ul::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.192);
+  width: 4px;
+  border-radius: 8px;
+}
+.answerkey ul::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 4px;
+  border-radius: 8px;
+}
+.answerkey ul li {
+  display: block;
+  margin: 15px 0px;
 }
 @media screen and (max-width: 540px) {
   .Element {
