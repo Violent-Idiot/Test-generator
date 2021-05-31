@@ -15,7 +15,9 @@ const Quiz = (props) => {
     var marks = 0;
 
     for (var a = 0; a < l; a++) {
-      if (ans[a] === e.target.elements[a].value) {
+      var actualAns = ans[a];
+      var givenAns = e.target.elements[a].value;
+      if (actualAns.toLowerCase() === givenAns.toLowerCase()) {
         marks = marks + 1;
       }
     }
