@@ -19,8 +19,26 @@ def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route("/upload", methods=["GET", "POST"])
-def upload_file():
+@app.route("/filetotext", methods=["GET", "POST"])
+def upload_file1():
+    if request.method == "POST":
+        if "file" not in request.files:
+            flash("No file part")
+            return {"success": False}
+        file = request.files["file"]
+        if file.filename == "":
+            flash("No selected file")
+            return {"success": False}
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            loc = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+            file.save(loc)
+            data = parser(loc)
+            return {"success": True, "data": data}
+
+
+@app.route("/filetoquestion", methods=["GET", "POST"])
+def upload_file2():
     if request.method == "POST":
         if "file" not in request.files:
             flash("No file part")
@@ -37,7 +55,7 @@ def upload_file():
             return {"success": True, "data": Q_generation(data)}
 
 
-@app.route("/generation", methods=["GET", "POST"])
+@app.route("/texttoquestion", methods=["GET", "POST"])
 def generate():
     if request.method == "POST":
         text = request.form.get('key')

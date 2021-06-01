@@ -37,7 +37,7 @@ const Landing = (props) => {
     formData.append("name", "abc123");
     formData.append("file", file);
 
-    fetch("http://127.0.0.1:5000/upload", {
+    fetch("http://127.0.0.1:5000/filetoquestion", {
       method: "POST",
       body: formData,
     })
@@ -69,7 +69,7 @@ const Landing = (props) => {
         }}
       />
       <button onClick={handleSubmit}>submits</button>*/}
-      <Header/>
+      <Header setQuestions={setQuestions}/>
       <div className={styles.main}>
         <div className={styles.introUploader}>
           <AnimatePresence exitBeforeEnter>
