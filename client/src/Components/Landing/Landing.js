@@ -69,7 +69,7 @@ const Landing = (props) => {
         }}
       />
       <button onClick={handleSubmit}>submits</button>*/}
-      <Header/>
+      <Header setQuestions={setQuestions}/>
       <div className={styles.main}>
         <div className={styles.introUploader}>
           <AnimatePresence exitBeforeEnter>

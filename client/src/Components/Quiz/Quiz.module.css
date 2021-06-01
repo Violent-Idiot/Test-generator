@@ -8,6 +8,14 @@
   padding-bottom: 100px;
   overflow-x: hidden;
 }
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgb(105, 105, 105);
+}
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 2px;
+}
 .Element {
   border: 1px solid white;
   min-height: 8vh;
@@ -102,10 +110,13 @@
   border-radius: 10px;
 }
 .modal button:hover {
-  background-color: #ffffff;
-  color: #1e1e1e;
+  background-color: #fff;
+  color: #000;
   transition-duration: 0.4s;
   cursor: pointer;
+}
+.modal button:active {
+  background-color: rgb(204, 202, 202);
 }
 .answerkey {
   background-color: #1e1e1e;

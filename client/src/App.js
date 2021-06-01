@@ -34,7 +34,7 @@ function App() {
           {
                 !questions? 
                 <Redirect to="/home/" /> :
-                <Quiz questions={questions} ans={ans} />
+                <Quiz setQuestions={setQuestions} questions={questions} ans={ans} />
             }
           </Route>
         </Switch>

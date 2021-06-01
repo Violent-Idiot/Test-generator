@@ -7,7 +7,7 @@ const Quiz = (props) => {
   const [result, setResult] = useState(null);
   const [anskey,setanskey] = useState(false);
 
-  const { questions, ans } = props;
+  const { setQuestions, questions, ans } = props;
 
 
   const Evaluate = (e) => {
@@ -35,7 +35,7 @@ const Quiz = (props) => {
 
   return (
     <div className={styles.Main}>
-      <Header />
+      <Header setQuestions={setQuestions}/>
       <div className={styles.Container}>
         <Fade>
           <h1 id={styles.heading2}>Questions</h1>
@@ -60,7 +60,6 @@ const Quiz = (props) => {
                     anskey?
                     <button onClick={()=>{setanskey(false)}}>HIDE</button>:
                     <button onClick={()=>{setanskey(true)}}>ANSWER KEY</button>
-
                   }
                 </motion.div>
                 <motion.div 
