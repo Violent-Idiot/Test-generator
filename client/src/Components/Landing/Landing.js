@@ -37,7 +37,7 @@ const Landing = (props) => {
     formData.append("name", "abc123");
     formData.append("file", file);
 
-    fetch("http://127.0.0.1:5000/filetoquestion", {
+    fetch("https://testpapergenerator.herokuapp.com/filetoquestion", {
       method: "POST",
       body: formData,
     })
