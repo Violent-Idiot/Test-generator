@@ -12,7 +12,7 @@ import {Route, useLocation, Switch, Redirect} from 'react-router-dom';
 
 const Landing = (props) => {
   const [file, setFile] = useState(null);
-  const [qList, setqList] = useState([]);
+  const [text, setText] = useState(null);
   const location = useLocation();
 
   const {
@@ -35,9 +35,9 @@ const Landing = (props) => {
     const formData = new FormData();
 
     formData.append("name", "abc123");
-    formData.append("file", file);
+    formData.append("key", text);
 
-    fetch("https://testpapergenerator.herokuapp.com/filetoquestion", {
+    fetch("https://testpapergenerator.herokuapp.com/texttoquestion", {
       method: "POST",
       body: formData,
     })
@@ -78,7 +78,7 @@ const Landing = (props) => {
                 <Intro />
               </Route>
               <Route path="/home/upload">
-                <Uploader setFile={setFile} handleSubmit={handleSubmit}/>
+                <Uploader setFile={setFile} handleSubmit={handleSubmit} setText={setText} text={text} />
               </Route>
             </Switch>
             
