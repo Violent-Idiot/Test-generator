@@ -10,7 +10,8 @@ const Uploader = (props)=>{
         setFile,
         handleSubmit,
         setText,
-        text
+        text,
+        setLoader
     } = props;
 
 
@@ -18,7 +19,7 @@ const Uploader = (props)=>{
     const onDrop = useCallback(acceptedFiles => {
         //setFile(acceptedFiles[0]);
         //setExt(acceptedFiles[0]);
-
+        setLoader(true);
         const formData = new FormData();
 
         formData.append("file", acceptedFiles[0]);
@@ -32,10 +33,12 @@ const Uploader = (props)=>{
             var txt = res.data;
             console.log(txt);            
             setText(txt);
+            setLoader(false)
             });
         })
         .catch((error) => {
             console.error("Error:", error);
+            setLoader(false);
         });
 
 
@@ -78,7 +81,7 @@ const Uploader = (props)=>{
                 animate={{opacity:1,transition:{delay:0.3}}}
                 exit={{opacity:0,transition:{duration:0.4}}}
             >
-                <motion.button whileHover={{scale:1.03,transition:{duration:0.1}}} onClick={handleSubmit}>
+                <motion.button whileHover={{scale:1.03,transition:{duration:0.1}}} onClick={handleSubmit} disabled={!text}>
                     GENERATE QUESTIONS
                 </motion.button>
             </motion.div>            

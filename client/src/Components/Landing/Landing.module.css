@@ -95,3 +95,18 @@
   width: 100%;
   mix-blend-mode: lighten;
 }
+
+.forAnimation {
+  position: fixed;
+  z-index: 200;
+  width: 210vh;
+  height: 100vh;
+  background-color: #1e1e1e93;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading {
+  width: 17%;
+  mix-blend-mode: lighten;
+}
