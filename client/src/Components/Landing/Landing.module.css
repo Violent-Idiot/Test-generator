@@ -99,7 +99,7 @@
 .forAnimation {
   position: fixed;
   z-index: 200;
-  width: 210vh;
+  width: 100vw;
   height: 100vh;
   background-color: #1e1e1e93;
   display: flex;
