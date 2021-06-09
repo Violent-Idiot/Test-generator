@@ -8,25 +8,33 @@
   padding-bottom: 100px;
   overflow-x: hidden;
 }
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgb(105, 105, 105);
+}
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 2px;
+}
 .Element {
   border: 1px solid white;
   min-height: 8vh;
   text-align: justify;
   color: #1e1e1e;
   width: 61vw;
-  margin: 2vw auto;
+  margin: 3vw auto;
   border-radius: 2vh;
   align-items: inherit;
   background-color: #ffffff;
 }
 .Question {
   border: 1px solid white;
-  border-radius: 18px;
-  min-height: 8vh;
+  border-radius: 2vh;
   justify-content: center;
   background-color: black;
   padding: 5vh 2vw;
   color: #ffffff;
+  user-select: none;
 }
 #Answer {
   background-color: #ffffff;
@@ -42,21 +50,116 @@
   min-width: 20vw;
   margin: 2.3vw 1vw;
   margin-bottom: 1vw;
+  font-size: 18px;
 }
 #Submit {
   font-size: 1.7vw;
   padding: 10px 30px;
   border-radius: 10px;
-  border: 1.5px solid wheat;
+  border: 1.5px solid rgb(255, 255, 255);
   color: #ffffff;
   margin-top: 40px;
   background-color: transparent;
+  user-select: none;
 }
 #Submit:hover {
-  background-color: wheat;
+  background-color: rgb(255, 255, 255);
   color: #1e1e1e;
   transition-duration: 0.4s;
   cursor: pointer;
+}
+.modalBackdrop {
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  background-color: #1e1e1ec5;
+}
+.modal {
+  background-color: #ffffff;
+  height: 30vh;
+  width: 30vw;
+  color: #1e1e1e;
+  position: fixed;
+  top: 50vh;
+  margin-top: -15vh;
+  left: 50%;
+  margin-left: -15vw;
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2vw;
+}
+.modal h2 {
+  margin: 8px 0px;
+  margin-top: 0px;
+  font-weight: 800;
+}
+.modal p {
+  margin: 8px 0px;
+}
+.modal button {
+  margin: 8px 0px;
+  background-color: black;
+  color: #ffffff;
+  border: 1px solid black;
+  padding: 8px 15px;
+  border-radius: 10px;
+}
+.modal button:hover {
+  background-color: #fff;
+  color: #000;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.modal button:active {
+  background-color: rgb(204, 202, 202);
+}
+.answerkey {
+  background-color: #1e1e1e;
+  height: calc(20vh - 2px);
+  width: calc(30vw - 2px);
+  color: #fff;
+  position: fixed;
+  top: 50vh;
+  margin-top: -15vh;
+  left: 50%;
+  margin-left: -15vw;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 2vw;
+  border: 1px solid white;
+  overflow-y: hidden;
+}
+.answerkey p {
+  margin-top: 31vh;
+  margin-bottom: 0px;
+  font-weight: 800;
+}
+.answerkey ul {
+  padding: 0;
+  height: 30vh;
+  width: 90%;
+  overflow-y: auto;
+}
+.answerkey ul::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.192);
+  width: 4px;
+  border-radius: 8px;
+}
+.answerkey ul::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 4px;
+  border-radius: 8px;
+}
+.answerkey ul li {
+  display: block;
+  margin: 15px 0px;
 }
 @media screen and (max-width: 540px) {
   .Element {

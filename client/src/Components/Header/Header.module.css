@@ -44,3 +44,15 @@
   -webkit-user-select: none;
   user-select: none;
 }
+
+@media screen and (max-width: 600px) {
+  .Nav {
+    text-align: center;
+  }
+  .logoContainer {
+    float: none;
+  }
+  .navBar {
+    display: none;
+  }
+}

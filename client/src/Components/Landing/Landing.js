@@ -6,13 +6,14 @@ import Wave from "../../Assets/wave1.png";
 import { AnimatePresence, motion } from 'framer-motion';
 import Intro from './intro/intro';
 import Uploader from './uploader/uploader';
-import {Route, useLocation, Switch} from 'react-router-dom';
-
+import {Route, useLocation, Switch, Redirect} from 'react-router-dom';
+import load from '../../Assets/load1.gif';
 
 
 const Landing = (props) => {
   const [file, setFile] = useState(null);
-  const [qList, setqList] = useState([]);
+  const [text, setText] = useState(null);
+  const [loader, setLoader] = useState(false);
   const location = useLocation();
 
   const {
@@ -29,13 +30,16 @@ const Landing = (props) => {
     )
 */
 
+  //for text-extraction: https://testpapergen.herokuapp.com/
+
   const handleSubmit = () => {
     const formData = new FormData();
+    setLoader(true);
 
     formData.append("name", "abc123");
-    formData.append("file", file);
+    formData.append("key", text);
 
-    fetch("http://127.0.0.1:5000/upload", {
+    fetch("https://testpapergenerator.herokuapp.com/texttoquestion", {
       method: "POST",
       body: formData,
     })
@@ -47,14 +51,16 @@ const Landing = (props) => {
           console.log(res.data);
           qa.map((res) => {
             q.push(res.question);
-            a.push(res.answer);
+            a.push(res.answers);
           });
           setQuestions(q);
           setAns(a);
+          setLoader(false);
         });
       })
       .catch((error) => {
         console.error("Error:", error);
+        setLoader(false);
       });
   };
 
@@ -67,7 +73,13 @@ const Landing = (props) => {
         }}
       />
       <button onClick={handleSubmit}>submits</button>*/}
-      <Header/>
+      {    
+        loader &&
+          <div className={styles.forAnimation}>
+              <img src={load} className={styles.loading}/>
+          </div>
+      }
+      <Header setQuestions={setQuestions}/>
       <div className={styles.main}>
         <div className={styles.introUploader}>
           <AnimatePresence exitBeforeEnter>
@@ -76,7 +88,7 @@ const Landing = (props) => {
                 <Intro />
               </Route>
               <Route path="/home/upload">
-                <Uploader setFile={setFile} handleSubmit={handleSubmit}/>
+                <Uploader setFile={setFile} handleSubmit={handleSubmit} setText={setText} text={text} setLoader={setLoader} />
               </Route>
             </Switch>
             

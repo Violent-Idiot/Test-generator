@@ -1,17 +1,62 @@
 .dropBoxO {
   background-color: rgba(255, 255, 255, 0.041);
-  height: 240px;
+  height: 50px;
   width: 100%;
   border-radius: 10px;
-  border: 2px dashed rgba(255, 255, 255, 0.719);
+  border: 2px solid rgba(255, 255, 255, 0.719);
 }
 .dropBoxA {
   background-color: rgba(255, 255, 255, 0.171);
-  height: 240px;
+  height: 50px;
   width: 100%;
   border-radius: 10px;
-  border: 2px dashed rgba(255, 255, 255, 0.719);
+  border: 2px solid rgba(255, 255, 255, 0.719);
   transition-duration: 0.4s;
+}
+
+.dropBoxA,
+.dropBoxO {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropBoxO p,
+.dropBoxA p {
+  margin: 0px;
+  margin-top: -5px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.dropBoxO:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.171);
+  transition-duration: 0.4s;
+}
+.dropBoxO:active {
+  background-color: rgba(255, 255, 255, 0.075);
+}
+
+.textpreview {
+  background-color: rgba(255, 255, 255, 0.041);
+  height: 230px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.719);
+}
+.textpreview textarea {
+  width: 95%;
+  height: 91%;
+  margin-top: 1%;
+  padding: 5px;
+  font-size: 15px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  color: #e4e4e4;
 }
 
 .buttonContainer button {
@@ -19,11 +64,11 @@
   color: #1e1e1e;
   font-size: 15px;
   font-weight: 600;
-  padding: 8px 25px;
+  padding: 11px 25px;
   border: none;
-  border-radius: 100px;
+  border-radius: 10px;
   transition-duration: 0.4s;
-  margin: 30px;
+  margin: 25px;
 }
 .buttonContainer button:hover {
   background-color: rgb(255, 255, 255);
