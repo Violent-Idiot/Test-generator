@@ -1,0 +1,33 @@
+* {
+  font-family: "Montserrat";
+}
+.Main {
+  background: #1e1e1e;
+
+  height: 80vh;
+  color: white;
+  padding: 20vh 0 0 10vw;
+}
+.Description {
+  width: 30vw;
+  font-weight: 300;
+  font-size: 3vh;
+  text-align: start;
+}
+.Socials {
+  background: #c4c4c4;
+  color: black;
+  width: 10vw;
+  border-radius: 5px;
+  font-weight: 300;
+  margin-top: 10vh;
+}
+.icons {
+  width: 1vw;
+  margin: 1vh;
+  color: #1e1e1e;
+  font-size: 2vw;
+}
+.icons :hover {
+  color: #302f2fc5;
+}
